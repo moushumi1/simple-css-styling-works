@@ -1,0 +1,80 @@
+<!-- <!DOCTYPE html> -->
+<html lang="en-gb">
+    <head>
+        <script src="https://kit.fontawesome.com/6938e305cc.js" crossorigin="anonymous"></script>
+        <meta name="viewport" content="width=device-width, height=device-height, initial-scale=1.0, minimum-scale=1.0">
+        <link rel="stylesheet" href="styles.css">
+        <title>Smart Template – Email writing add-in for outlook</title>
+        <link rel="icon" href="email_template_app_icon_64x64.png">
+        <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Raleway:300,400,700" type="text/css">
+        <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Open+Sans:400,300,600" type="text/css">
+        <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+    </head>
+    <body id="body">
+        <div id="stickyHeadeer">
+            <div  class="buttonContainer">
+                <button class="button">Button</button>
+            </div>   
+            <div id="arrow" class="defaltArrow thickArrow"></div>
+            <div id="arrow1" class="defaltArrow thickArrow"></div>
+            <div id="arrow2" class="defaltArrow thickArrow"></div>
+            <div id="arrow3" class="defaltArrow thickArrow"></div>
+        </div>
+        <script>
+            
+            var arrow = document.querySelector("#arrow");
+            var arrowRects = arrow.getBoundingClientRect();
+            var arrowX = arrowRects.left + arrowRects.width / 2;
+            var arrowY = arrowRects.top + arrowRects.height / 2;
+
+            var arrow1 = document.querySelector("#arrow1");
+            var arrowRects1 = arrow1.getBoundingClientRect();
+            var arrowX1 = arrowRects1.left + arrowRects1.width / 2;
+            var arrowY1 = arrowRects1.top + arrowRects1.height / 2;
+
+            var arrow2 = document.querySelector("#arrow2");
+            var arrowRects2 = arrow2.getBoundingClientRect();
+            var arrowX2 = arrowRects2.left + arrowRects2.width / 2;
+            var arrowY2 = arrowRects2.top + arrowRects2.height / 2;
+
+            var arrow3 = document.querySelector("#arrow3");
+            var arrowRects3 = arrow3.getBoundingClientRect();
+            var arrowX3 = arrowRects3.left + arrowRects3.width / 2;
+            var arrowY3 = arrowRects3.top + arrowRects3.height / 2;
+
+            addEventListener("mousemove", function(event) {
+                arrow.style.transform = "rotate(" + Math.atan2(event.clientY - arrowY, event.clientX - arrowX) + "rad)";
+                arrow1.style.transform = "rotate(" + Math.atan2(event.clientY - arrowY1, event.clientX - arrowX1) + "rad)";
+                arrow2.style.transform = "rotate(" + Math.atan2(event.clientY - arrowY2, event.clientX - arrowX2) + "rad)";
+                arrow3.style.transform = "rotate(" + Math.atan2(event.clientY - arrowY3, event.clientX - arrowX3) + "rad)";
+            });
+
+            window.onload = function() {
+                setInterval(function(){   
+                    document.getElementById('body').classList.add("special");
+                    // document.getElementById('arrow').classList.add("thinArrow");
+                    // document.getElementById('arrow').classList.remove("thickArrow");
+                    $('.defaltArrow').addClass('thinArrow');
+                    $('.defaltArrow').removeClass("thickArrow");
+                },2000);
+                setInterval(function(){   
+                    document.getElementById('body').classList.remove("special");
+                    $('.defaltArrow').removeClass('thinArrow');
+                    $('.defaltArrow').addClass("thickArrow");
+                },4000);
+            };
+
+            // addEventListener("onload", function (evt) {
+            //     evt.target.classList.add("special");
+            //     setInterval(function(){   
+            //     evt.target.classList.remove("special");
+            //     },3000);
+            //     setInterval(function(){   
+            //     evt.target.classList.add("special");
+            //     },9000);
+            // });
+
+
+        </script>
+    </body>
+</html>

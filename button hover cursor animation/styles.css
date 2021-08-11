@@ -1,0 +1,87 @@
+body {
+  /* height: 100vh; */
+  display: flex;
+  /* overflow: hidden; */
+  background: hotpink;
+} 
+
+.thickArrow {
+  background-image: url(./thickArrow.png);
+}
+
+.thinArrow {
+  background-image: url(./thinArrow.png);
+}
+
+.defaltArrow {
+  background-size: 100%;
+  background-repeat: no-repeat;
+  background-position: center;
+  width: 75px;
+  height: 70px;
+}
+
+.special {
+  background: yellowgreen;
+}
+
+#arrow {
+  position: absolute;
+  top: 10%;
+  left: 20%;
+}
+
+#arrow1 {
+  position: absolute;
+  top: 40%;
+  left: 40%;
+}
+
+#arrow2 {
+  position: absolute;
+  top: 30%;
+  left: 50%;
+}
+
+#arrow3 {
+  position: absolute;
+  top: 60%;
+  left: 80%;
+}
+
+.buttonContainer{
+  position: absolute;
+  bottom: 0;
+  left: 0;
+  width: 100%;
+  text-align: center;
+  font-size: 1em;
+  padding-bottom: 61px;
+}
+
+.button {
+  background-color: black;
+  border: none;
+  color: white;
+  padding: 15px 32px;
+  text-align: center;
+  text-decoration: none;
+  display: inline-block;
+  font-size: 16px;
+  margin: 4px 2px;
+  cursor: pointer;
+  border-radius:5px;
+}
+
+.buttonContainer:hover ~ #arrow {   top: 80%;
+  left: 40%;}
+
+.buttonContainer:hover ~ #arrow1 {   top: 70%;
+  left: 40%;}
+
+.buttonContainer:hover ~ #arrow2 {   top: 70%;
+  left: 50%;}
+
+.buttonContainer:hover ~ #arrow3 {   top: 80%;
+  left: 60%;}
+  
